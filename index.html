@@ -1,125 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CineScope</title>
-    <script src="https://kit.fontawesome.com/3a0de18bb2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://kit.fontawesome.com/3a0de18bb2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <section id="landing">
-        <nav>
-            <div class="nav__container">
-
-                <img class="logo" src="./assets/Sample Logo__blk.png" alt="">
-                <ul class="nav__links">
-                    <li><a href="#" class="nav__link">Home</a></li>
-                    <li><a href="#" class="nav__link">About</a></li>
-                    <li><a href="#" class="nav__link nav__link--primary">Search</a></li>
-                </ul>
-            </div>
-        </nav>
-        <header>
-            <div class="header__container">
-                <div class="header__description">
-                    <h1>Welcome to <span class="gold">CineScope</span>.</h1>
-                    <h2>Lights. Camera. Dashboard. <br>
-                    <span class="gold">Your ultimate movie companion.</span></h2>
-                    <button class="btn">Browse Movies</button>
-                </div>
-                <figure class="header__img--wrapper">
-                    <img src="./assets/undraw_horror-movie_9020.svg" alt="">
-                </figure>
-            </div>
-        </header>
+      <nav>
+        <div class="nav__container">
+          <img class="logo" src="./assets/cinescope_1c.png" alt="" />
+          <ul class="nav__links">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">About</a></li>
+            <li><a href="#" class="nav__link nav__link--primary">Search</a></li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link">Movies</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link no-cursor">Contacts</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <header>
+        <div class="header__container">
+          <div class="header__description">
+            <h1>Welcome to <span class="gold">CineScope</span>.</h1>
+            <h2>
+              Lights. Camera. Dashboard. <br />
+              <span class="gold">Your ultimate movie companion.</span>
+            </h2>
+            <button class="btn">Browse Movies</button>
+          </div>
+          <figure class="header__img--wrapper">
+            <img src="./assets/undraw_horror-movie_9020.svg" alt="" />
+          </figure>
+        </div>
+      </header>
     </section>
 
     <main>
-        <section id="highlights">
-            <div class="container">
-                <div class="row">
-                    <h2 class="section__title">
-                        Why choose <span class="gold">CineScope</span>?
-                    </h2>
-                    <div class="highlight__wrapper">
-                        <div class="highlight">
-                            <div class="highlight__img">
-                                <i class="fa-solid fa-film"></i>
-                            </div>
-                            <h3 class="highlight__subtitle">Updated Daily</h3>
-                            <p class="highlight__para">Instantly see what's popular right now, from big blockbusters to hidden gems.</p>
-                        </div>
-                        <div class="highlight">
-                            <div class="highlight__img">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <h3 class="highlight__subtitle">Ratings at a Glance</h3>
-                            <p class="highlight__para">Quickly check movie ratings so you can decide what's worth watching.</p>
-                        </div>
-                        <div class="highlight">
-                            <div class="highlight__img">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                            <h3 class="highlight__subtitle">Smart Search</h3>
-                            <p class="highlight__para">Easily find any movie by title, genre, or actor with a quick and simple search.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <section id="featured">
-            <div class="container">
-                <div class="row">
-                    <h2 class="section__title">Featured <span class="gold">Movies</span></h2>
-                    <div class="movies">
-                        <div class="movie">
-                            <figure>
-                                <img src="" alt="" class="movie__img">
-                            </figure>
-                            <div class="movie__title">
-                                Movie Title
-                            </div>
-                            <div class="movie__ratings">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <section id="recent">
-            <div class="container">
-                <div class="row">
-                    
-                </div>
-            </div>
-        </section> --> --> -->
-    </main>
-    <footer>
+      <section id="highlights">
         <div class="container">
-            <div class="row">
-                <a href="#">
-                <figure class="footer__logo">
-                    <img src="./assets/cinescope_1c.png" alt="" class="footer__logo--img">
-                </figure>
-            </a>
-            <div class="footer__list">
-                <a href="" class="footer__link">Home</a>
-                <a href="" class="footer__link no-cursor">About</a>
-                <a href="" class="footer__link">Movies</a>
-                <a href="" class="footer__link no-cursor">Contact</a>
+          <div class="row">
+            <h2 class="section__title">
+              Why choose <span class="gold">CineScope</span>?
+            </h2>
+            <div class="highlight__wrapper">
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-film"></i>
+                </div>
+                <h3 class="highlight__subtitle">Updated Daily</h3>
+                <p class="highlight__para">
+                  Instantly see what's popular right now, from big blockbusters
+                  to hidden gems.
+                </p>
+              </div>
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h3 class="highlight__subtitle">Ratings at a Glance</h3>
+                <p class="highlight__para">
+                  Quickly check movie ratings so you can decide what's worth
+                  watching.
+                </p>
+              </div>
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="highlight__subtitle">Smart Search</h3>
+                <p class="highlight__para">
+                  Easily find any movie by title, genre, or actor with a quick
+                  and simple search.
+                </p>
+              </div>
             </div>
-            <div class="footer__copyright">
-                Copyright &copy; 2025 CineScope
-            </div>
-            </div>
+          </div>
         </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row row__column">
+          <a href="#">
+            <figure class="footer__logo">
+              <img
+                src="./assets/cinescope_1c.png"
+                alt=""
+                class="footer__logo--img"
+              />
+            </figure>
+          </a>
+          <div class="footer__list">
+            <a href="" class="footer__link">Home</a>
+            <a href="" class="footer__link no-cursor">About</a>
+            <a href="" class="footer__link">Movies</a>
+            <a href="" class="footer__link no-cursor">Contact</a>
+          </div>
+          <div class="footer__copyright">Copyright &copy; 2025 CineScope</div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
