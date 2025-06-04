@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <section id="landing">
@@ -29,14 +29,14 @@
               <i class="fas fa-times"></i>
             </button>
             <ul class="menu__links">
-              <li class="menu__list">
-                <a href="#" class="menu__link">Home</a>
+              <li class="menu__list" >
+                <a href="#" class="menu__link" onclick="openMenu()">Home</a>
               </li>
               <li class="menu__list">
-                <a href="#" class="menu__link">Movies</a>
+                <a href="#" class="menu__link" onclick="openMenu()">Movies</a>
               </li>
               <li class="menu__list">
-                <a href="#" class="menu__link no-cursor">Contacts</a>
+                <a href="#" class="menu__link no-cursor " onclick="openMenu()">Contacts</a>
               </li>
             </ul>
           </div>
@@ -60,6 +60,7 @@
     </section>
 
     <main>
+        
       <section id="highlights">
         <div class="container">
           <div class="row">
@@ -101,6 +102,24 @@
           </div>
         </div>
       </section>
+      
+      <section id="featured">
+        <div id="top-movies" class="dashboard__grid">
+            <div class="row" >
+                <h2 class="section__title"> 🎬 Top Rated Movies</h2>
+            </div>
+          </div>
+
+      </section>
+
+      <section id="favorites">
+        <div id="favorites__container" class="dashboard__grid favorites__container">
+          <div class="row">
+            <h2 class="section__title">⭐ Your Favorites</h2>
+          </div>
+        </div>
+      </section>
+      
     </main>
 
     <footer>
