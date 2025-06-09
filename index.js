@@ -26,11 +26,10 @@ function renderFavorites() {
     });
   }
   
-  
   function removeFromFavorites(imdbID) {
     const updatedFavorites = getFavorites().filter(movie => movie.imdbID !== imdbID);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    loadFavorites();
+    renderFavorites();
     displayMovies();
   }
 
@@ -40,7 +39,7 @@ async function fetchMovie(title) {
 }
 
 async function displayMovies() {
-    const container = document.getElementById("top-movies");
+    const container = document.getElementById("top__movies");
     container.innerHTML = "";
   
     for (const title of movieTitles) {
@@ -77,18 +76,86 @@ function addToFavorites(movie) {
     favorites.push(movie);
     localStorage.setItem("favorites", JSON.stringify(favorites));
     alert(`Added "${movie.Title}" to favorites!`);
-    displayMovies(); // Refresh buttons
+    displayMovies();
   } else {
     alert(`"${movie.Title}" is already in favorites.`);
   }
 }
 
-document.addEventListener("DOMContentLoaded", displayMovies);
+function renderSearchResults(movies) {
+  const resultsContainer = document.getElementById("search__results");
+
+  // Clear previous results
+  resultsContainer.innerHTML = "";
+
+  // Hide by default
+  resultsContainer.style.display = "none";
+
+  // If no movies, exit early
+  if (!movies || movies.length === 0) return;
+
+  // Render each movie card
+  movies.forEach(movie => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <img src="${movie.Poster !== "N/A" ? movie.Poster : "assets/no-image.png"}" alt="${movie.Title}">
+      <div class="card__body">
+        <h3 class="card__title">${movie.Title}</h3>
+        <p class="card__genre">${movie.Genre || "N/A"}</p>
+        <p class="card__rating">${movie.imdbRating ? `⭐ ${movie.imdbRating}` : "Not Rated"}</p>
+        <button onclick='addToFavorites(${JSON.stringify(movie)})'>Add to Favorites</button>
+      </div>
+    `;
+    resultsContainer.appendChild(card);
+  });
+
+  // Show only after content is added
+  resultsContainer.style.display = "grid"; // or "block" if preferred
+}
 
 
 function openMenu() {
-    document.body.classList += " menu--open"
+  console.log("menu opened");
+    document.body.classList.add("menu--open")
 }
 function closeMenu() {
-    document.body.classList.remove('menu--open')
+    document.body.classList.remove("menu--open")
 }
+window.openMenu = openMenu;
+window.closeMenu = closeMenu;
+
+function createFlash(x, y) {
+  const flash = document.createElement("div");
+  flash.classList.add("flash");
+  flash.style.top = `${y}px`;
+  flash.style.left = `${x}px`;
+  document.body.appendChild(flash);
+
+  setTimeout(() => {
+    flash.remove();
+  }, 300);
+}
+
+function triggerCameraFlashes(count = 10, duration = 2000) {
+  const interval = duration / count;
+
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      createFlash(x, y);
+    }, i * interval);
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayMovies();
+  renderFavorites();
+  triggerCameraFlashes(20, 3000);
+});
+
+
+
