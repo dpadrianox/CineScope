@@ -244,6 +244,7 @@ HIGHLIGHTS
 }
 .highlight__wrapper {
   display: flex;
+  align-items: flex-start
 }
 .highlight {
   padding: 0 24px;
@@ -262,6 +263,11 @@ HIGHLIGHTS
   text-align: center;
   max-width: 280px;
 }
+/* .highlight__para:nth-child(1),
+.highlight__para:nth-child(3) {
+  padding-bottom: 16px;
+} */
+
 .highlight__img {
   border: 2px solid #e509145d;
   width: 80px;
@@ -349,7 +355,40 @@ DASHBOARD
   margin-top: 24px;
 }
 
+
 /* 
+
+CURATED LISTS
+
+*/
+
+.curated__lists {
+  padding: 2rem 1rem;
+}
+
+.curated__title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.curated__row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.curated__row::-webkit-scrollbar {
+  height: 6px;
+}
+.curated__row::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+/* 
+
 
 FOOTER
 
